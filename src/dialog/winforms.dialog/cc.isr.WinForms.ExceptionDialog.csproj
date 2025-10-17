@@ -1,0 +1,131 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net472;net48;net9.0-windows</TargetFrameworks>
+    <LangVersion>preview</LangVersion>
+
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <!-- Assembly Info -->
+    <RootNamespace>cc.isr.WinForms</RootNamespace>
+    <AssemblyName>cc.isr.WinForms.ExceptionDialog</AssemblyName>
+    <ApplicationTitle>cc.isr.WinForms.ExceptionDialog</ApplicationTitle>
+    <ApplicationId>cc.isr.win.forms.exception.dialog</ApplicationId>
+
+    <!-- Coding -->
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>Off</OptionInfer>
+
+    <!-- Signature -->
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\items\keyPair.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+
+    <!-- NuGet -->
+    <IsPackable>true</IsPackable>
+    <PackageId>cc.isr.WinForms.ExceptionDialog</PackageId>
+    <Description>Windows Forms exception message box forked from the Microsoft SQL Server Exception Box</Description>
+    <PackageTags>Windows Dialogs Exception Message Box</PackageTags>
+    <PackageOutputPath>C:\my\nuget</PackageOutputPath>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <!-- Documentation -->
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+
+  </PropertyGroup>
+
+  <!-- Assembly attributes -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.CLSCompliantAttribute">
+      <_Parameter1>true</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.ComVisibleAttribute">
+      <_Parameter1>false</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="readme.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\items\ProductKey.cs" Link="Properties\ProductKey.cs" />
+    <Compile Remove="standard\*.cs" Condition="'$(TargetFramework)' == 'net9.0-windows'" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);MYPROJREF;</DefineConstants>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition="$(DefineConstants.Contains(';PROJREF;')) OR $(DefineConstants.Contains(';MYPROJREF;'))">
+      <ItemGroup>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+  <ItemGroup>
+    <None Update="version.build.props">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>version.build.tt</DependentUpon>
+    </None>
+    <None Update="version.build.tt">
+      <LastGenOutput>version.build.props</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Dialogs\ExceptionMessageBoxErrorSR.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExceptionMessageBoxErrorSR.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Dialogs\NewMessageBoxSR.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NewMessageBoxSR.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Dialogs\ExceptionMessageBoxErrorSR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessageBoxErrorSR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Dialogs\ExceptionMessageBoxForm.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Dialogs\NewMessageBoxSR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>NewMessageBoxSR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Import Project="version.build.props" />
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <!--
+  https://stackoverflow.com/questions/2058441/could-not-find-any-resources-appropriate-for-the-specified-culture-or-the-neutra
+  -->
+  <PropertyGroup>
+    <EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
+  </PropertyGroup>
+
+</Project>

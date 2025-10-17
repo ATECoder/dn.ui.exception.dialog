@@ -1,0 +1,91 @@
+﻿<Project Sdk="MSTest.Sdk">
+  <PropertyGroup>
+    <EnablePreviewFeatures>true</EnablePreviewFeatures>
+
+    <TargetFrameworks>net472;net48;net9.0-windows</TargetFrameworks>
+    <LangVersion>preview</LangVersion>
+
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <!-- Assembly Info -->
+    <RootNamespace>cc.isr.WinForms.ExceptionMessageBox</RootNamespace>
+    <AssemblyName>cc.isr.WinForms.ExceptionMessageBox.MSTest</AssemblyName>
+    <ApplicationTitle>cc.isr.win.forms.exception.message.box.mstest</ApplicationTitle>
+
+    <!-- Signature -->
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\items\keyPair.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+
+    <!-- NuGet -->
+    <IsPackable>false</IsPackable>
+
+  </PropertyGroup>
+
+  <!-- Assembly attributes -->
+  <ItemGroup>
+    <AssemblyAttribute Include="Microsoft.VisualStudio.TestTools.UnitTesting.DoNotParallelize"/>
+    <AssemblyAttribute Include="System.CLSCompliantAttribute">
+      <_Parameter1>true</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.ComVisibleAttribute">
+      <_Parameter1>false</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\items\ProductKey.cs" Link="Properties\ProductKey.cs" />
+    <Compile Remove="standard\*.cs" Condition="'$(TargetFramework)' == 'net9.0-windows'" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);MYPROJREF;</DefineConstants>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition="$(DefineConstants.Contains(';PROJREF;')) OR $(DefineConstants.Contains(';MYPROJREF;'))">
+      <ItemGroup>
+        <ProjectReference Include="..\winforms.message.box\cc.isr.WinForms.ExceptionMessageBox.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="cc.isr.WinForms.ExceptionMessageBox" Version="1.0.8105" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.10" />
+    <Compile Update="Tests\ExceptionMessageBuilderResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExceptionMessageBuilderResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Tests\ExceptionMessageBuilderResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessageBuilderResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <!-- Suppress warning about newton soft 9.0.1 which is part of the .net fx testing extensions code coverage.
+      <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-5crp-9r3c-p9vr" />
+    -->
+    <PackageReference Update="Microsoft.Testing.Extensions.CodeCoverage" Version="18.1.0" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net472' or '$(TargetFramework)'=='net48'">
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+
+  <Import Project="..\winforms.message.box\version.build.props" />
+
+</Project>

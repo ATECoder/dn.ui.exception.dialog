@@ -1,0 +1,59 @@
+﻿[Script for Search and Replace]
+[Options]
+Search_subdir=0
+Prompt_flag=0
+Max Display Chars=512
+Show Progress Dialog=1
+Count across files=0
+Line Prefix=Line %3ld - 
+Binary Prefix=Offset 0x%-6lx - 
+Replace Processing=0
+Process Binary Files=0
+Buffer Size=102400
+Num Buffers To Process=0
+ZIP Mask=*.zip;*.jar
+Output_File=
+Show_Files=1
+Backup Path=C:\Users\David\AppData\Local\Search and Replace\Backup\
+Before Hit=<
+After Hit=>
+Max Reg Expr=300
+Write to Backup Dir=0
+Unzip Dir=C:\Users\David\AppData\Local\Temp\
+Show Files Without Hits=0
+Display Replace String=0
+Display File Stats=1
+Show File Date and Size=0
+Reverse Filters=0
+Min Size Filter=0
+Max Size Filter=0
+Min Date Filter=
+Max Date Filter=
+Skip Files Mask=0
+Ignore Attributes=55
+Keep file time stamp=0
+One hit=0
+Sort File Names=0
+Sort Ascending=1
+Append to output file=0
+[Search]
+;PROJREF_;
+[Replace]
+;PROJREF;
+[Path]
+C:\my\lib\vs\core\enums\src\directory.build.props
+[Path]
+C:\my\lib\vs\core\json\src\directory.build.props
+[Path]
+C:\my\lib\vs\core\logging\src\directory.build.props
+[Path]
+C:\my\lib\vs\core\std\src\directory.build.props
+[Path]
+C:\my\lib\vs\core\tracing\src\directory.build.props
+[Path]
+C:\my\lib\vs\core\win\src\directory.build.props
+[Path]
+C:\my\lib\vs\core\win.controls\src\directory.build.props
+[Path]
+C:\my\lib\vs\core\win.forms\src\directory.build.props
+[End of Search and Replace Script]
