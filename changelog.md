@@ -17,6 +17,9 @@ Notable changes to this solution are documented in this file using the
   - Add parallelize to the assembly attributes.
   - change Assert...( ..., format, args ); to Assert...(... string.Format( System.Globalization.CultureInfo.CurrentCulture, format, args ) );
   - Use Assert.HasCount<T> in place of Assert.AreEquals( count, [T].Length ).
+- directory.build.props
+  - update packages.
+  - point to the current repository.
 
 ## [1.0.9382] - 2025-09-08
 - Use language preview in windows and net standard projects so as to enable auto properties.
