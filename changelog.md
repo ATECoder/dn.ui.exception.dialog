@@ -6,12 +6,11 @@ Notable changes to this solution are documented in this file using the
 
 ## [1.0.9421] - 2025-10-17
 - Update packages:
+  - SQLite from 9.0.6 to 9.0.10.
+  - SQLClient from 6.0.2 to 6.1.2.
   - .NET Test SDK to 4.0.1.
   - Microsoft Extensions to 9.0.10.
-  - XUnit from 3.1.4 to 3.1.5.
-  - Fluent Assertions from 8.6.0 to 8.7.1. 
   - Microsoft.Net.Test.SDK from 17.14.1 to 18.0.0.
-  - BenchmarkDotNet from 0.14.0 to 0.15.4.
 - Test projects
   - Use [TestMethod( DisplayName = "...']
   - Change [ClassCleanup( ClassCleanupBehavior.EndOfClass )] to [ClassCleanup]
