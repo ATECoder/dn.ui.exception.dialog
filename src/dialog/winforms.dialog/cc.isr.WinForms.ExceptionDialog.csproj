@@ -80,18 +80,6 @@
   </Choose>
 
   <ItemGroup>
-    <None Update="version.build.props">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>version.build.tt</DependentUpon>
-    </None>
-    <None Update="version.build.tt">
-      <LastGenOutput>version.build.props</LastGenOutput>
-      <Generator>TextTemplatingFileGenerator</Generator>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Dialogs\ExceptionMessageBoxErrorSR.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -115,11 +103,21 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <Import Project="version.build.props" />
-
   <ItemGroup>
+    <!-- This service generates text from T4 text templates. -->
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+    <None Update="version.build.props">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>version.build.tt</DependentUpon>
+    </None>
+    <None Update="version.build.tt">
+      <LastGenOutput>version.build.props</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
   </ItemGroup>
+
+  <Import Project="version.build.props" />
 
   <!--
   https://stackoverflow.com/questions/2058441/could-not-find-any-resources-appropriate-for-the-specified-culture-or-the-neutra
