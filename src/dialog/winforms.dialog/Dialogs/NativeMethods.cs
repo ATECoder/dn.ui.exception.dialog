@@ -12,7 +12,7 @@ internal sealed partial class NativeMethods
     /// <summary>   Message beep. </summary>
     /// <remarks>   2025-06-23. </remarks>
     /// <param name="beepType"> Type of the beep. </param>
-    /// <returns>   True if it succeeds, false if it fails. </returns>
+    /// <returns>   True if it succeeds; otherwise, false. </returns>
     [LibraryImport( "user32" )]
     [return: MarshalAs( UnmanagedType.Bool )]
     public static partial bool MessageBeep( uint beepType );
@@ -25,7 +25,7 @@ internal sealed partial class NativeMethods
     /// <summary>   Plays a waveform sound. The waveform sound for each sound type is identified by an entry in the registry.</summary>
     /// <remarks>   2025-06-23. </remarks>
     /// <param name="beepType"> The waveform sound type. </param>
-    /// <returns>   True if it succeeds, false if it fails. </returns>
+    /// <returns>   True if it succeeds; otherwise, false. </returns>
     public static bool MessageBeep( ExceptionMessageBoxForm.BeepType beepType )
     {
         // send our Win32 message to make the currently running instance
