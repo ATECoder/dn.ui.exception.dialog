@@ -119,7 +119,7 @@ public class SqliteExceptionMessageBoxTests
         Thread oThread = new( new ThreadStart( ShowDialogException ) );
         oThread.Start();
         // a long delay was required...
-        System.Threading.Tasks.Task.Delay( 2000, this.TestContext?.CancellationTokenSource.Token ?? System.Threading.CancellationToken.None ).Wait( this.TestContext?.CancellationTokenSource.Token ?? System.Threading.CancellationToken.None );
+        System.Threading.Tasks.Task.Delay( 2000, this.TestContext?.CancellationToken ?? System.Threading.CancellationToken.None ).Wait( this.TestContext?.CancellationToken ?? System.Threading.CancellationToken.None );
         SendWait( "{ENTER}" );
         // This tabbed into another application.  cc.isr.WinForms.SendWait("%{TAB}{ENTER}")
         oThread.Join();
@@ -154,7 +154,7 @@ public class SqliteExceptionMessageBoxTests
         Thread oThread = new( new ThreadStart( ShowDialogAbortIgnore ) );
         oThread.Start();
         // a long delay was required...
-        System.Threading.Tasks.Task.Delay( 2000, this.TestContext?.CancellationTokenSource.Token ?? System.Threading.CancellationToken.None ).Wait( this.TestContext?.CancellationTokenSource.Token ?? System.Threading.CancellationToken.None );
+        System.Threading.Tasks.Task.Delay( 2000, this.TestContext?.CancellationToken ?? System.Threading.CancellationToken.None ).Wait( this.TestContext?.CancellationToken ?? System.Threading.CancellationToken.None );
         SendWait( "{ENTER}" );
         // This tabbed into another application.  cc.isr.WinForms.SendWait("%{TAB}{ENTER}")
         oThread.Join();
