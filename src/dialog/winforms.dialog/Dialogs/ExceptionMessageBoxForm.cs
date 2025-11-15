@@ -621,7 +621,7 @@ internal sealed partial class ExceptionMessageBoxForm : Form
     internal string BuildAdvancedInfo( Exception ex, AdvancedInfoType type )
     {
         StringBuilder stringBuilder = new();
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         ArgumentNullException.ThrowIfNull( ex );
 #else
         if ( ex is null ) throw new ArgumentNullException( nameof( ex ) );

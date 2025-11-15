@@ -110,9 +110,12 @@ internal sealed partial class PrivacyConfirmationForm
             this.MinimizeBox = false;
             this.Name = "PrivacyConfirmationForm";
             this.ShowInTaskbar = false;
-#if !NET5_0_OR_GREATER
+#if NET10_0_OR_GREATER
+            this.FormClosed += new FormClosedEventHandler( this.Form_Closed );
+#else
             this.Closed += new System.EventHandler( this.Form_Closed );
 #endif
+
         this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.InfoGrid)).EndInit();
             this.ResumeLayout(false);

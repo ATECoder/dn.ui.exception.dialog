@@ -105,7 +105,7 @@ internal static class CompactExtensionMethods
             return string.Empty;
         }
 
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         ArgumentNullException.ThrowIfNull( font, nameof( font ) );
 #else
         if ( font is null )

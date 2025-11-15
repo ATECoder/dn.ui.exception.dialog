@@ -21,7 +21,7 @@ public class DefaultExceptionMessageBuilder() : IExceptionMessageBuilder
     [System.Diagnostics.CodeAnalysis.SuppressMessage( "Performance", "CA1863:Use CompositeFormat", Justification = "<Pending>" )]
     public virtual string BuildMessage( StringBuilder stringBuilder, Exception exception, string handledExceptionSource )
     {
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         ArgumentNullException.ThrowIfNull( exception );
         ArgumentNullException.ThrowIfNull( stringBuilder );
 #else
@@ -44,7 +44,7 @@ public class DefaultExceptionMessageBuilder() : IExceptionMessageBuilder
     [System.Diagnostics.CodeAnalysis.SuppressMessage( "Performance", "CA1822: Mark members as static", Justification = "<Pending>" )]
     public virtual string BuildTechnicalDetails( Exception exception )
     {
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         ArgumentNullException.ThrowIfNull( exception );
 #else
         if ( exception is null ) throw new ArgumentNullException( nameof( exception ) );
@@ -71,7 +71,7 @@ public class DefaultExceptionMessageBuilder() : IExceptionMessageBuilder
     [System.Diagnostics.CodeAnalysis.SuppressMessage( "Globalization", "CA1309:Use ordinal StringComparison", Justification = "<Pending>" )]
     public bool HasTechnicalDetails( Exception exception )
     {
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         ArgumentNullException.ThrowIfNull( exception );
 #else
         if ( exception is null ) throw new ArgumentNullException( nameof( exception ) );
@@ -98,7 +98,7 @@ public class DefaultExceptionMessageBuilder() : IExceptionMessageBuilder
     [System.Diagnostics.CodeAnalysis.SuppressMessage( "Performance", "CA1822:Mark members as static", Justification = "<Pending>" )]
     public string BuildHelpURL( Exception ex )
     {
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         ArgumentNullException.ThrowIfNull( ex );
 #else
         if ( ex is null ) throw new ArgumentNullException( nameof( ex ) );

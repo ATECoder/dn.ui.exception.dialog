@@ -235,7 +235,7 @@ public class MessageBox : ExceptionMessageBox
     /// <returns>   <see cref="DialogResult">Dialog result</see>. </returns>
     public static DialogResult ShowDialog( Exception exception, ExceptionMessageBoxSymbol symbol, DialogResult[] dialogResults )
     {
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         ArgumentNullException.ThrowIfNull( dialogResults, nameof( dialogResults ) );
 #else
         if ( dialogResults is null ) throw new ArgumentNullException( nameof( dialogResults ) );
@@ -265,7 +265,7 @@ public class MessageBox : ExceptionMessageBox
     /// <returns>   <see cref="DialogResult">Dialog result</see>. </returns>
     public static DialogResult ShowDialog( string text, string caption, ExceptionMessageBoxSymbol symbol, DialogResult[] dialogResults )
     {
-#if NET8_0_OR_GREATER
+#if NET5_0_OR_GREATER
         ArgumentNullException.ThrowIfNull( dialogResults, nameof( dialogResults ) );
 #else
         if ( dialogResults is null ) throw new ArgumentNullException( nameof( dialogResults ) );
