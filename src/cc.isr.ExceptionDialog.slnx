@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/WinForms/">
+    <Project Path="dialog/winforms.dialog/cc.isr.WinForms.ExceptionDialog.csproj" />
+    <Project Path="message.box/winforms.message.box.mstest/cc.isr.WinForms.ExceptionMessageBox.MSTest.csproj" />
+    <Project Path="message.box/winforms.message.box/cc.isr.WinForms.ExceptionMessageBox.csproj" />
+  </Folder>
+  <Folder Name="/`build/">
+    <File Path="directory.build.props" />
+    <File Path="exclusion.dic" />
+    <File Path="global.json" />
+  </Folder>
+  <Folder Name="/`docs/">
+    <File Path="../changelog.md" />
+    <File Path="../readme.md" />
+    <File Path="../todo.md" />
+  </Folder>
+</Solution>
