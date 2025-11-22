@@ -399,7 +399,7 @@ public enum MyMessageBoxIcon
 }
 /// <summary>   A dialog extension methods. </summary>
 /// <remarks>   David, 2021-03-11. </remarks>
-internal static class DialogExtensionMethods
+internal static class DialogMethods
 {
     /// <summary>   Converts a value to a dialog result. </summary>
     /// <remarks>   David, 2021-03-11. </remarks>

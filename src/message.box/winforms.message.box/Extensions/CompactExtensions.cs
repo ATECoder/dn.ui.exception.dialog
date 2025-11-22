@@ -8,7 +8,7 @@ namespace cc.isr.WinForms.Dialogs.CompactExtensions;
 /// <remarks> (c) 2009 Integrated Scientific Resources, Inc. All rights reserved. <para>
 /// Licensed under The MIT License.</para><para>
 /// David, 2009-04-09, 1.1.3386 </para></remarks>
-internal static class CompactExtensionMethods
+internal static class CompactMethods
 {
     /// <summary>
     /// Returns a substring of the input string taking not of start index and length exceptions.
