@@ -2,7 +2,10 @@
 Notable changes to this solution are documented in this file using the 
 [Keep a Changelog] style. The dates specified are in coordinated universal time (UTC).
 
-[1.0.9449]: https://github.com/ATECoder/dn.ui.exception.dialog.git
+[1.0.9673]: https://github.com/ATECoder/dn.ui.exception.dialog.git
+
+## [1.0.9673] - 2026-06-26
+Add reference to the BuildPackages project from the [IDE Repo].
 
 ## [1.0.9421] - 2025-11-14
 - Transition .NET 9.0 projects to .NET 10 and VS2026.
@@ -76,7 +79,7 @@ Notable changes to this solution are documented in this file using the
 &copy; 2025 Integrated Scientific Resources, Inc. All rights reserved.
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
-[vs.ide]: https://bitbucket.org/davidhary/vs.ide.git
 [SQL Exception Message]: https://msdn.microsoft.com/en-us/library/ms365274.aspx
 [to do]: https://github.com/ATECoder/dn.ui.exception.dialog.git/src/todo.md
 [Windows Forms Repository]: https://bitbucket.org/davidhary/dn.win.forms.git
+[IDE Repo]: https://github.com/ATECoder/vs.ide.git

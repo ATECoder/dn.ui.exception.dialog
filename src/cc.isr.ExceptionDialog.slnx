@@ -14,4 +14,7 @@
     <File Path="../readme.md" />
     <File Path="../todo.md" />
   </Folder>
+  <Folder Name="/`framework/">
+    <Project Path="../../../core/ide/src/my/lib/BuildPackages/BuildPackages.csproj" />
+  </Folder>
 </Solution>
