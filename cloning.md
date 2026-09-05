@@ -15,12 +15,12 @@ Clone the repository along with its requisite repositories to their respective r
 The repositories listed in [external repositories] are required:
 * [IDE Repository] - ISR framework windows forms libraries
 ```
-git clone git@bitbucket.org:davidhary/vs.ide.git
+git clone https://github.com/atecoder/vs.ide.git
 ```
 
 Clone the repositories into the following folders (parents of the .git folder):
 ```
-%vslib%\core\ide
+%dnlib%\core\ide
 ```
 where %vslib% is the root folder of the .NET libraries, e.g., %my%\lib\vs 
 and %my% is the root folder of the .NET solutions
@@ -32,13 +32,13 @@ These files can be found in the [IDE Repository].
 Restoring Editor Configuration:
 ```
 xcopy /Y %my%\.editorconfig %my%\.editorconfig.bak
-xcopy /Y %vslib%\core\ide\code\.editorconfig %my%\.editorconfig
+xcopy /Y %dnlib%\core\ide\code\.editorconfig %my%\.editorconfig
 ```
 
 Restoring Run Settings:
 ```
 xcopy /Y %userprofile%\.runsettings %userprofile%\.runsettings.bak
-xcopy /Y %vslib%\core\ide\code\.runsettings %userprofile%\.runsettings
+xcopy /Y %dnlib%\core\ide\code\.runsettings %userprofile%\.runsettings
 ```
 where %userprofile% is the root user folder.
 
